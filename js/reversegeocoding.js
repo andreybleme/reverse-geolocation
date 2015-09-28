@@ -1,33 +1,18 @@
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 8,
-    center: {lat: 40.731, lng: -73.997}
-  });
-  
+/**
+ * Returns a human readable address, from a pair of latitude and longitude coordinates
+ * @param {latlng} latitudo,longitude (comma separated) 
+ * @return {results} a list of addresses found, in a json format 
+ */
+function geocodeLatLng(latlng) {
   var geocoder = new google.maps.Geocoder;
-  var infowindow = new google.maps.InfoWindow;
 
-  document.getElementById('submit').addEventListener('click', function() {
-    geocodeLatLng(geocoder, map, infowindow);
-  });
-}
-
-function geocodeLatLng(geocoder, map, infowindow) {
-  var input = document.getElementById('latlng').value;
-  var latlngStr = input.split(',', 2);
+  var latlngStr = latlng.split(',', 2);
   var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
 
   geocoder.geocode({'location': latlng}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
-      console.log(results);
       if (results[1]) {
-        map.setZoom(11);
-        var marker = new google.maps.Marker({
-          position: latlng,
-          map: map
-        });
-        infowindow.setContent(results[1].formatted_address);
-        infowindow.open(map, marker);
+        convertToJson(results);
       } else {
         window.alert('No results found');
       }
@@ -35,4 +20,8 @@ function geocodeLatLng(geocoder, map, infowindow) {
       window.alert('Geocoder failed due to: ' + status);
     }
   });
+}
+
+function convertToJson (results) {
+  return JSON.stringify(results);
 }
