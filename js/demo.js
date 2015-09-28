@@ -38,6 +38,6 @@ function geocodeLatLng(geocoder, map, infowindow) {
 }
 
 function showJsonResults (results) {
-  var resultsJson = JSON.stringify(results); 
-  document.getElementById('jsonresult').innerHTML = JSON.stringify(results, null, 4);
+  var resultsJson = JSON.stringify(results, null, 4); 
+  document.getElementById('jsonresult').innerHTML = resultsJson;
 }
