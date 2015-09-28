@@ -1,14 +1,26 @@
 # reverse-geolocation
 Get a human readable address from geo coordinates :earth_americas:
 
+It converts geographic coordinates into a readable address. It also gives you a usefull json with address information about a according to a geocode.
+
 ## Why?
+
 Using APIs and services that provide geo-referenced information, what we received in response use to be something like: `40.714224,-73.961452`, 
 geographic coordinates (latitude and longitude). Having these coordinates in hand, we always have to find a way to transform it into
 a readable and usable format.
 
+### Dependencies
+It clearly uses the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/?hl=pt-BR), so remeber to get your own API Key at https://developers.google.com/maps/documentation/javascript/get-api-key.
+
+Having it done, activate the Google Maps JavaScript API:
+```html
+<script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&signed_in=true&callback=initMap" async defer></script>
+```
+
 ## How it works
+
 To easily get usefull information about a place that corresponds to a geocode, having the geographic coordinates yout just need to use
-the `reversegeocode.js`'s function: `geocodeLatLng`:
+the `reversegeocode.js`'s function: `geocodeLatLng()`:
 
 ```javascript
 function geocodeLatLng(latlng) {
@@ -50,7 +62,7 @@ results[6].formatted_address: "New York, USA",
 results[7].formatted_address: "United States"
 ```
 
-If at least 1 address was found, it returns a JSON with a address corresponding to the geocode. Assuming a this `40.714224,-73.961452`
+If at least one address was found, it returns a JSON with a address corresponding to the geocode. Assuming a this `40.714224,-73.961452`
 as the `latlng` parameter, we would have a JSON like:
 
 ```JSON
@@ -83,7 +95,7 @@ as the `latlng` parameter, we would have a JSON like:
 ]
 ```
 
-The `convertToJson`function, accepts an object. So, if you want a JSON with all the addresses found in all levels of precision, you can
+The `convertToJson()`function, accepts an object. So, if you want a JSON with all the addresses found in all levels of precision, you can
 pass the entire object on `results` parameter:
 ```javascript
  if (status === google.maps.GeocoderStatus.OK) {
@@ -95,4 +107,5 @@ pass the entire object on `results` parameter:
     } else {
       window.alert('Geocoder failed due to: ' + status);
     }
+  }
 ```
