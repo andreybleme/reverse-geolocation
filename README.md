@@ -1,11 +1,11 @@
 # reverse-geolocation
 Get a human readable address from geo coordinates :earth_americas:
 
-It converts geographic coordinates into a readable address. It also gives you a usefull json with address information about a according to a geocode.
+It converts geographic coordinates into a readable address. It also gives you a usefull JSON with address information according to a geocode coordinate.
 
 ## Why?
 
-Using APIs and services that provide geo-referenced information, what we received in response use to be something like: `40.714224,-73.961452`, 
+Using APIs and services that provide geo-referenced information, what we receive in response use to be something like: `40.714224,-73.961452`, 
 geographic coordinates (latitude and longitude). Having these coordinates in hand, we always have to find a way to transform it into
 a readable and usable format.
 
