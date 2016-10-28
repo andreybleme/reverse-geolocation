@@ -1,4 +1,8 @@
 # reverse-geolocation
+
+[![license img](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+
 Get a human readable address from geo coordinates :earth_americas:
 
 It converts geographic coordinates into a readable address. It also gives you a usefull JSON with address information according to a geocode coordinate.
