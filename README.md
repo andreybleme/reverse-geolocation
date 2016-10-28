@@ -1,3 +1,5 @@
+[![MIT License](https://img.shields.io/badge/license-MIT-lightgreen.svg?style=flat-square)](https://github.com/andreybleme/reverse-geolocation/blob/master/LICENSE)
+
 # reverse-geolocation
 Get a human readable address from geo coordinates :earth_americas:
 
