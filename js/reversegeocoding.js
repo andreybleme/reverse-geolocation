@@ -1,6 +1,6 @@
 /**
  * Returns a human readable address, from a pair of latitude and longitude coordinates
- * @param {latlng} latitudo,longitude (comma separated) 
+ * @param {latlng} latitude,longitude (comma separated) 
  * @return {results} a list of addresses found, in a json format 
  */
 function geocodeLatLng(latlng) {
