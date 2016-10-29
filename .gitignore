@@ -5,7 +5,7 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
-demo/node_modules/*
+test/node_modules/*
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
