@@ -1,3 +1,5 @@
+[![MIT License](https://img.shields.io/badge/license-MIT-lightgreen.svg?style=flat-square)](https://github.com/andreybleme/reverse-geolocation/blob/master/LICENSE)
+
 # reverse-geolocation
 [![license img](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
